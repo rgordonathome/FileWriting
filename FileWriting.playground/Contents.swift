@@ -52,3 +52,33 @@ do {
 catch {
     print("Could not write to file")
 }
+
+// Test writing an "1" to file
+do {
+    let url = NSURL(fileURLWithPath: filePath)
+    try "1".appendToURL(url)
+    let result = try String(contentsOfURL: url)
+}
+catch {
+    print("Could not write to file")
+}
+
+// Test writing a "2" to file
+do {
+    let url = NSURL(fileURLWithPath: filePath)
+    try "2".appendToURL(url)
+    let result = try String(contentsOfURL: url)
+}
+catch {
+    print("Could not write to file")
+}
+
+// Test writing a "3 and new line" to file
+do {
+    let url = NSURL(fileURLWithPath: filePath)
+    try "3".appendLineToURL(url)
+    let result = try String(contentsOfURL: url)
+}
+catch {
+    print("Could not write to file")
+}
